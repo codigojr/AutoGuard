@@ -1,6 +1,13 @@
 import tkinter as tk
 from tkinter import ttk
 import pyautogui
+
+# Disable PyAutoGUI's failsafe so cursor moves near the edges do not
+# raise an exception. This mirrors the suggestion given when running
+# the program where a `pyautogui.FailSafeException` was raised.
+# NOTE: Disabling the failsafe is generally discouraged but is useful
+# in controlled environments like this simulator.
+pyautogui.FAILSAFE = False
 from datetime import datetime
 
 class AutoGuard:
